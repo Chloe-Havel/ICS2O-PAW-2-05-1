@@ -7,17 +7,28 @@
 "use strict"
 
 /**
- * Check servie worker.
+ * This function displays "Hello, World!".
+ * @constructor
  */
-if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-PWA-Test-1/sw.js", {
-    scope: "/ICS2O-PWA-Test-1/",
-  })
-}
+ 'use strict'
 
-/**
- * This function displays an alert.
- */
-function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
-}
+ /**
+  * This function calculates area and perimeter of rectangle.
+  */
+ function calculate() {
+   const TAX_RATE = 0.18
+   
+   // input
+   const number = parseInt(document.getElementById('number-of-hours').value)
+   const rate = parseInt(document.getElementById('hourly-rate').value)
+ 
+   // process
+   const pay = number * rate
+   const taxesToPay = pay * TAX_RATE
+   const takeHomePay = pay - taxesToPay
+ 
+   // output  
+   document.getElementById('number').innerHTML = 'your pay will be: ' + ' $ ' + pay
+   document.getElementById('rate').innerHTML = 'the goverment will take: ' + ' $ ' + takeHomePay
+ }
+ 
